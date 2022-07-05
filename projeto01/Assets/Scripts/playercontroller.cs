@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class playercontroller : MonoBehaviour
 {
+    public int coins = 0;
     public float moveSpeed;
     public float maxVelocity;
 
@@ -116,5 +117,16 @@ public class playercontroller : MonoBehaviour
     private void OnDrawGizmos()
     {
         Debug.DrawRay(start:transform.position, dir: Vector3.down * rayDistance,Color.red);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            coins++;
+            Destroy(other.gameObject);
+        }
+
+        
     }
 }
