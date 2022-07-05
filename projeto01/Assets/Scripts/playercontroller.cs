@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class playercontroller : MonoBehaviour
 {
+    public TMP_Text coninText;
     public int coins = 0;
     public float moveSpeed;
     public float maxVelocity;
@@ -124,6 +126,7 @@ public class playercontroller : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             coins++;
+            coninText.text = coins.ToString();
             Destroy(other.gameObject);
         }
 
