@@ -126,7 +126,7 @@ public class playercontroller : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             coins++;
-            coninText.text = coins.ToString();
+            PayerObserverManeger.PlayerCoinsChanged(coins);
             Destroy(other.gameObject);
         }
 
