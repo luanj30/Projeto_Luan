@@ -11,7 +11,7 @@ public class gamemanager : MonoBehaviour
 
     [SerializeField] private string locationToLoad;
 
-    [SerializeField] private Scene guiScene;
+    [SerializeField] private string guiScene;
     
     // Start is called before the first frame update
     
@@ -22,7 +22,7 @@ public class gamemanager : MonoBehaviour
        //SceneManager.LoadScene(locationToLoad, LoadSceneMode.Additive);
        SceneManager.LoadSceneAsync(locationToLoad, LoadSceneMode.Additive).completed += operation =>
        {
-           Vector3 starPosition = gameObject.Find("playerstart").transform.position;
+           Vector3 starPosition = GameObject.Find("playerstart").transform.position;
 
            Instantiate(playerAndCameraPrefeb, starPosition, Quaternion.identity);
        };
