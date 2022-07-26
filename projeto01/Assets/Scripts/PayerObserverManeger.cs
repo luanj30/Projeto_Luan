@@ -11,4 +11,8 @@ public static class PayerObserverManeger
     {
         OnPlayerCoinsChanged?.Invoke(value);
     }
+    
+    
 }
+
+
