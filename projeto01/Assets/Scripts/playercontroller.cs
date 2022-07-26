@@ -9,7 +9,8 @@ public class playercontroller : MonoBehaviour
 {
     public TMP_Text coninText;
     public int coins = 0;
-    public int cylinder = 0;
+    public int cylinders = 0;
+    public TMP_Text cylinderText;
     
     public float moveSpeed;
     public float maxVelocity;
@@ -131,20 +132,18 @@ public class playercontroller : MonoBehaviour
             PayerObserverManeger.PlayerCoinsChanged(coins);
             Destroy(other.gameObject);
         }
-        
-        
-
-
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
         if (other.CompareTag("cylinder"))
-        { 
-            cylinder++;
-           
+        {
+            cylinders++;
+            PayerObserverManeger.PlayercylinderChanged(cylinders);
             Destroy(other.gameObject);
         }
+        
+        
+
+
     }
+
+   
 
 }

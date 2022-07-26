@@ -12,6 +12,13 @@ public static class PayerObserverManeger
         OnPlayerCoinsChanged?.Invoke(value);
     }
     
+    public static Action<int> OnPayercylinderChanged;
+
+    public static void PlayercylinderChanged(int value)
+    {
+        OnPayercylinderChanged?.Invoke(value);
+    }
+    
     
 }
 
